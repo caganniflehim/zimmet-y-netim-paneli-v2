@@ -1,0 +1,24 @@
+﻿@model IEnumerable<envanter.Models.Cihazlar>
+
+<h1>Cihaz Listesi</h1>
+<p><a asp-action="Create">Yeni Cihaz Ekle</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cihaz ID</th>
+            <th>Marka Model</th>
+            <th>Seri No</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CihazId</td>
+                <td>@item.MarkaModel</td>
+                <td>@item.SeriNo</td>
+            </tr>
+        }
+    </tbody>
+</table>

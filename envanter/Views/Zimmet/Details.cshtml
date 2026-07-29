@@ -1,0 +1,66 @@
+@model envanter.Models.Zimmet
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Zimmet</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CihazId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CihazId)
+        </dd>
+    </dl>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonelId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PersonelId)
+        </dd>
+    </dl>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VerilisTarihi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VerilisTarihi)
+        </dd>
+    </dl>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IadeTarihi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IadeTarihi)
+        </dd>
+    </dl>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+    </dl>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cihaz)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cihaz)
+        </dd>
+    </dl>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Personel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Personel)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ZimmetId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

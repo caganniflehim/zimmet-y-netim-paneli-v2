@@ -1,0 +1,53 @@
+@model envanter.Models.Zimmet
+@inject envanter.Models.EnvanterDbContext _context
+
+@{
+    ViewData["Title"] = "Yeni Zimmet Ekle";
+}
+
+<h1>Yeni Zimmet Ekle</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Personel Seçin</label>
+        <select asp-for="PersonelId" class="form-control">
+            <option value="">-- Personel Seçiniz --</option>
+            @foreach (var p in _context.Personels)
+            {
+                <option value="@p.PersonelId">@p.AdSoyad</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Cihaz Seçin</label>
+        <select asp-for="CihazId" class="form-control">
+            <option value="">-- Cihaz Seçiniz --</option>
+            @foreach (var c in _context.Cihazlars)
+            {
+                <option value="@c.CihazId">@c.MarkaModel</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Veriliş Tarihi</label>
+        <input asp-for="VerilisTarihi" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label> Açıklama</label>
+        <textarea asp-for="Aciklama" class="form-control" placeholder="Cihaz durumu veya notlar"></textarea>
+    </div>
+    <br />
+
+    <div class="form-group">
+        <label> İade tarihi</label>
+        <input asp-for="IadeTarihi" type="date" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+
+<div>
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div>

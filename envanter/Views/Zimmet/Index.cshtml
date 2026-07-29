@@ -1,0 +1,68 @@
+@model IEnumerable<envanter.Models.Zimmet>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h1>Zimmet Listesi</h1>
+
+<!-- Doğru yer burası: Tablonun üstünde, ID'siz ve bağımsız olmalı -->
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Zimmet Ekle</a>
+</p>
+
+<table class="table">
+    <!-- Tablo başlıkları ve satırları burada başlar -->
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CihazId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonelId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VerilisTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IadeTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cihaz)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Personel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           <td>@Html.DisplayFor(modelItem => item.CihazId)</td>
+        <td>@Html.DisplayFor(modelItem => item.PersonelId)</td>
+        <td>@Html.DisplayFor(modelItem => item.VerilisTarihi)</td>
+        <td>@Html.DisplayFor(modelItem => item.IadeTarihi)</td>
+        <td>@Html.DisplayFor(modelItem => item.Aciklama)</td>
+        
+        <!-- Sağ taraftaki boş görünen kısımlar burasıdır: -->
+        <td>@item.Cihaz?.MarkaModel</td>   <!-- Cihazın adı/modeli -->
+        <td>@item.Personel?.AdSoyad</td>  
+                
+            <td>
+                <a asp-action="Edit" asp-route-zimmetid ="@item.ZimmetId">Edit</a> |
+                    <a asp-action="Details" asp-route-zimmetid="@item.ZimmetId">Details</a> |
+                    <a asp-action="Delete" asp-route-zimmetid="@item.ZimmetId">Delete</a>
+                    
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
