@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("envanter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ef32efb3596e0b22bb98e3a5a9ec9877837c1f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("envanter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("envanter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
